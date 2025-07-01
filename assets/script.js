@@ -5,3 +5,6 @@ function animateCharts() {
         bar.style.height = height + '%';
     });
 }
+window.addEventListener('load', function() {
+    setTimeout(animateCharts, 500);
+});
