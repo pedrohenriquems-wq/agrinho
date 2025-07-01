@@ -5,9 +5,11 @@ function animateCharts() {
         bar.style.height = height + '%';
     });
 }
+
 window.addEventListener('load', function() {
     setTimeout(animateCharts, 500);
 });
+
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -21,6 +23,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
         }
     });
 });
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -29,3 +32,10 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, { threshold: 0.1 });
+
+document.querySelectorAll('section').forEach(section => {
+    section.style.opacity = 0;
+    section.style.transform = 'translateY(30px)';
+    section.style.transition = 'opacity 0.8s, transform 0.8s';
+    observer.observe(section);
+});
