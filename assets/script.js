@@ -46,3 +46,12 @@ document.querySelectorAll('.timeline-content').forEach(item => {
     item.style.transition = 'opacity 0.8s, transform 0.8s';
     observer.observe(item);
 });
+
+document.querySelectorAll('.timeline-content').forEach((item, index) => {
+    setTimeout(() => {
+        if (item.style.opacity !== "1") {
+            item.style.opacity = 1;
+            item.style.transform = 'translateX(0)';
+        }
+    }, 300 * (index + 1));
+});
