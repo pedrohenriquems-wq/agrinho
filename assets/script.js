@@ -39,3 +39,10 @@ document.querySelectorAll('section').forEach(section => {
     section.style.transition = 'opacity 0.8s, transform 0.8s';
     observer.observe(section);
 });
+
+document.querySelectorAll('.timeline-content').forEach(item => {
+    item.style.opacity = 0;
+    item.style.transform = 'translateX(30px)';
+    item.style.transition = 'opacity 0.8s, transform 0.8s';
+    observer.observe(item);
+});
